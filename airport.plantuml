@@ -1,0 +1,47 @@
+@startuml Airport
+
+Airport <-- Plane: lands at
+Airport <-- Plane: takes off from
+Passenger -- Bag : travelswith >
+Passenger <-- Plane: transports
+Passenger --> Airport: checks in
+Bag -- Plane: loadOnto >
+Crew - Bag : travelswith >
+Crew - Plane : isAllocatedTo >
+
+class Main {
+    checkInPassengers[]
+    takeBags[]
+    planeDeparts()
+    planeLands()
+
+}
+class Airport {
+    String name
+   
+}
+
+class Passenger {
+    String name
+    int passportNumber
+    String seatNumber
+    addBag()
+}
+
+class Bag {
+    int weight
+    boolean isOverLimit()
+}
+
+class Plane {
+    String name
+    board(Passengers)
+    disembark(Passengers)
+}
+
+class Crew {
+    String name
+    String position
+    String staffNumber
+}
+@enduml

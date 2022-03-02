@@ -1,0 +1,18 @@
+@startuml
+
+skinparam style strictuml
+actor Passenger
+
+Passenger -> CheckInSystem: dropBag()
+CheckInSystem -> Bag: new Bag(weight)
+CheckInSystem -> Bag: isOverLimit()
+group alternate flows
+Bag -> CheckInSystem: false
+CheckInSystem -> Passenger: bag drop successful
+end
+group
+Bag -> CheckInSystem: true
+CheckInSystem -> Passenger: bag drop failure
+end
+
+@enduml
