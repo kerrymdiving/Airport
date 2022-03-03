@@ -4,6 +4,8 @@ public class Passenger {
     private String seatNumber;
     private BoardingPass boardingPass;
     private Bag bags;
+    private Airport airportName;
+    private String flightNo;
 
     public Passenger(String name, String passportNumber, String seatNumber) {
         this.name = name;
@@ -43,12 +45,21 @@ public class Passenger {
         // set this bag to be null
         // return the bag
     }
+    public Airport getAirportName() {
+        return airportName;
+    }
+
+    public void setAirportName(Airport airportName) {
+        this.airportName = airportName;
+    }
+
+    public String getFlightNo() {
+        return flightNo;
+    }
+
+    public void setFlightNo(String flightNo) {
+        this.flightNo = flightNo;
+    }
+    
 
 }
-
-// // this method utilises scanner in main
-// public static Passenger createPassenger(String name, String passportNumber,
-// String seatNumber) {
-// return new Passenger(name, passportNumber, seatNumber);
-// // need to add this passenger to the ArrayList
-// }
