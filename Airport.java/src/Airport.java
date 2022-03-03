@@ -3,6 +3,7 @@ import java.util.ArrayList;
 public class Airport {
     private String name;
     private String terminal;
+    private int noOfCheckedInPassengers;
     private ArrayList<Passenger> passengerCheckedIn = new ArrayList<>();
     
     public Airport(String name, String terminal) {
@@ -17,9 +18,15 @@ public class Airport {
     public String getTerminal() {
         return terminal;
     }
-
+    
+    public int getNoOfCheckedInPassengers() {
+        return noOfCheckedInPassengers;
+    }
+    
     public void checkIn(Passenger passenger) {
         this.passengerCheckedIn.add(passenger);
+        noOfCheckedInPassengers = passengerCheckedIn.size();
+        // change local variable value to length of array
     }
 
     // hashmap of routes allocate to passenger
